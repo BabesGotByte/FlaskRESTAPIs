@@ -1,5 +1,5 @@
 # FlaskRESTAPIs
-Building flask REST API
+Building flask REST APIs
 
 [![Generic badge](https://img.shields.io/badge/Framework-Flask-green.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Language-Python-orange.svg)](https://shields.io/)
