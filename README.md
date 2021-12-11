@@ -14,6 +14,7 @@ Building flask REST API
   `sudo apt-get install sublime-text` </br>
 2. Install the libraries listed in the requirements.txt file. </br>
   Command: </br>
+  `sudo apt install python3-testresources` </br>
   `pip3 install -r requirements.txt` </br>
 
 
