@@ -9,7 +9,7 @@ Building flask REST API
 1. Install any text editor: </br>
   Commands to install sublime text editor: </br>
   `wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list </br>
   sudo apt-get update
   sudo apt-get install sublime-text`
 
