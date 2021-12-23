@@ -34,18 +34,28 @@ video_put_arguments.add_argument("followers",type=int,help="Name of the video is
 
 video = {}
 
-def video_id_not_exits(video_id):
+def abort_if_video_id_not_exits(video_id):
 	if video_id not in video:
 		abort(404,message="Video id is not found...")
 
+def abort_if_video_id_exits(video_id):
+	if video_id in video:
+		abort(404,message="Video already exists...")
+
 class Video(Resource):
 	def get(self,video_id):
-		video_id_not_exits(video_id)
+		abort_if_video_id_not_exits(video_id)
 		return video[video_id]
 	def post(self,video_id):
+		abort_if_video_id_exits(video_id)
 		args = video_put_arguments.parse_args()
 		video[video_id] = args
 		return video[video_id],201
+	def delete(self,video_id):
+		abort_if_video_id_not_exits(video_id)
+		del video[video_id]
+		return '',204
+
 
 api.add_resource(Video, "/Video/<int:video_id>")
 
