@@ -21,5 +21,14 @@ Building flask REST APIs
    `python3 Code.py` </br>
     On second terminal: </br>
    `python3 teset.py` </br>
+ 
+## Deploy on Heroku
+`sudo snap install heroku--classic`</br>
+`heroku login` </br>
+`heroku create flaskapi-heroku --buildpack heroku/python`</br>
+Here, flaskapi-heroku is the name of the application created on Heroku.
+
+## Link to test live APIs
+https://flaskapi-heroku.herokuapp.com/
 
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
