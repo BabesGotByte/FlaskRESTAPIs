@@ -1,5 +1,5 @@
 from flask import Flask, request
-from flask_restful import Api,Resource
+from flask_restful import Api,Resource,reqparse,abort
 
 app = Flask(__name__)
 api = Api(app)
@@ -24,8 +24,30 @@ class HelloWorld(Resource):
 
 # api.add_resource(HelloWorld, "/Hello/<string:name>")	
 # api.add_resource(HelloWorld, "/Hello")	
-api.add_resource(HelloWorld, "/Hello/<string:name>/<int:age>")	
+# api.add_resource(HelloWorld, "/Hello/<string:name>/<int:age>")	
 
+video_put_arguments = reqparse.RequestParser()
+video_put_arguments.add_argument("name",type=str,help="Name of the video is required", required=True)
+video_put_arguments.add_argument("likes",type=int,help="Name of the video is required", required=True)
+video_put_arguments.add_argument("dislikes",type=int,help="Name of the video is required", required=True)
+video_put_arguments.add_argument("followers",type=int,help="Name of the video is required", required=True)
+
+video = {}
+
+def video_id_not_exits(video_id):
+	if video_id not in video:
+		abort(404,message="Video id is not found...")
+
+class Video(Resource):
+	def get(self,video_id):
+		video_id_not_exits(video_id)
+		return video[video_id]
+	def post(self,video_id):
+		args = video_put_arguments.parse_args()
+		video[video_id] = args
+		return video[video_id],201
+
+api.add_resource(Video, "/Video/<int:video_id>")
 
 if __name__ == "__main__":
 	app.run(debug=True)
