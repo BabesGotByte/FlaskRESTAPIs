@@ -28,6 +28,13 @@ Building flask REST APIs
 `heroku create flaskapi-heroku --buildpack heroku/python`</br>
 Here, flaskapi-heroku is the name of the application created on Heroku.
 
+`git init`
+`git add .`
+`git commit -m "Flask-Restful-Heroku api"`
+`heroku git:remote -a flaskapi-heroku`
+`git push heroku master`
+
+
 ## Link to test live APIs
 https://flaskapi-heroku.herokuapp.com/
 
