@@ -16,7 +16,10 @@ Building flask REST APIs
   Command: </br>
   `sudo apt install python3-testresources` </br>
   `pip3 install -r requirements.txt` </br>
-
-
+3. Run code. </br>
+   On first terminal: </br>
+   `python3 Code.py` </br>
+    On second terminal: </br>
+   `python3 teset.py` </br>
 
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
